@@ -85,13 +85,13 @@ def move(p, U, p_move):
             if (U[0]>0): #moves down
                 s = p_move*p[(i-U[0])%len(p)][j] + (1-p_move)*p[i][j]
             if (U[0]<0): #moves up
-                s = p_move*p[(i+U[0])%len(p)][j] + (1-p_move)*p[i][j]
+                s = p_move*p[(i-U[0])%len(p)][j] + (1-p_move)*p[i][j]
             if (U[0]==0 & U[1]==0): #no move
                 s=p[i][j]
             if (U[1]>0): #right
                 s = p_move*p[i][(j-U[1])%len(p[0])] + (1-p_move)*p[i][j]
             if (U[1]<0): #left
-                s = p_move*p[i][(j+U[1])%len(p[0])] + (1-p_move)*p[i][j]
+                s = p_move*p[i][(j-U[1])%len(p[0])] + (1-p_move)*p[i][j]
             #s = pExact * p[(i-U) % len(p)]
             #s = s + pOvershoot * p[(i-U-1) % len(p)]
             #s = s + pUndershoot * p[(i-U+1) % len(p)]
